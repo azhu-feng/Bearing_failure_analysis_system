@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>牵引电机轴承故障预警系统</title>
+    <link rel="stylesheet" href="{% static 'plugins/bootstrap-3.4.1-dist/css/bootstrap.min.css' %}">
+    <style>
+        .center-block {
+            display: block;
+            margin-left: 40%;
+            margin-top: 13%;
+            background-color: white;
+
+            /* 边框圆角 */
+            border-radius: 10px;
+
+            /* 盒阴影*/
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+
+            width: 300px;
+            height: 240px;
+
+            /* 内边距 */
+            padding: 20px;
+
+            position: relative;
+            z-index: 1;
+        }
+
+        body {
+            background: url("{% static 'img/img-1.jpg' %}");
+        }
+    </style>
+</head>
+<body>
+<ol class="breadcrumb">
+    <li><a href="/admin/login">Home</a></li>
+    <li><a href="/upload/">Upload</a></li>
+</ol>
+
+<div class="center-block">
+    <div class="panel panel-default">
+        <div class="panel-heading">File name format:feature.csv</div>
+        <div class="panel-body">
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <label>
+                    <input class="form-control" name="dataclass">
+                </label>
+                <a href="/analysis/">
+                    <button type="submit" class="btn btn-success">upload</button>
+                </a>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+<script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
+<script src="{% static 'plugins/bootstrap-3.4.1-dist/js/bootstrap.min.js' %}"></script>
+</html>

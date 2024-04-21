@@ -1,0 +1,8 @@
+<div class="center-block">
+   <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-success">上传</button>
+        <a href="/analysis/"><button type="button" class="btn btn-primary">完成</button></a>
+    </form>
+</div>

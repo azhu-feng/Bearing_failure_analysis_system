@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>牵引电机轴承故障预警系统</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700,800|Roboto:400,500,700" rel="stylesheet">
+    <link type="text/css" href="{% static 'css/theme.css' %}" rel="stylesheet">
+    <link type="text/css" href="{% static 'css/theme.css' %}" rel="stylesheet">
+    <link type="text/css" href="{% static 'css/login.css' %}" rel="stylesheet">
+
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-transparent navbar-dark bg-dark py-4">
+    <div class="container">
+        <a class="navbar-brand" href="./"><strong>Bearing</strong> Analysis_System</a>
+        <button class="navbar-toggler" type="button" data-action="offcanvas-open" data-target="#navbar_main"
+                aria-controls="navbar_main" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse offcanvas-collapse" id="navbar_main">
+            <ul class="navbar-nav ml-auto align-items-lg-center">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/admin/login">Home</a>
+                </li>
+                <li class="nav-item">
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary" id="loginA" target="_blank"
+                            href="javascript:">Sign In
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="login" id="exampleModal" tabindex="-1" role="dialog"
+                         aria-labelledby="exampleModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title" id="exampleModalLabel">User Login</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <form method="post">
+                                        {% csrf_token %}
+                                        <div class="form-group">
+                                            <label for="recipient-name" class="control-label" >Username:</label>
+                                            <input type="text" class="form-control" id="username" name="username">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="message-text" class="control-label">Password:</label>
+                                            <input class="form-control" id="password" name="password">
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default" id="close"
+                                                    data-dismiss="modal">Close
+                                            </button>
+                                            <button type="submit" class="btn btn-primary" id="submit">Commit</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg"></div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+{% block content %}{% endblock %}
+</body>
+<script src="{% static 'js/login.js' %}"></script>
+</html>

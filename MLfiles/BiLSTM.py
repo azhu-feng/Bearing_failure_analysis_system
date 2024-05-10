@@ -27,7 +27,7 @@ def build_cnn_model(num_classes):
 
 
 # 训练模型
-def train_cnn_model(model, X_train, y_train, X_val, y_val, dataclass, epochs=8, batch_size=230):
+def train_cnn_model(model, X_train, y_train, X_val, y_val, dataclass, epochs=20, batch_size=230):
     tb_cb = TensorBoard(log_dir='C:/Users/z1834/Desktop/Bearing_Failure_Analysis_System/MLfiles/logs/logs-BiLstm')
 
     history = model.fit(X_train, y_train, epochs=epochs, batch_size=batch_size, validation_data=(X_val, y_val),

@@ -1,9 +1,7 @@
 from .forms import FileUploadForm
 from django.shortcuts import render, redirect
 from app01 import models
-from MLfiles import CNN
-from MLfiles import LSTM
-from MLfiles import BiLSTM
+from MLfiles import CNN, LSTM, BiLSTM, Transfomer
 
 global username, password, dataclass
 
@@ -40,7 +38,8 @@ def analysis(request):
     result1, acc1 = CNN.CNN(state, dataclass)
     result2, acc2 = LSTM.Lstm(state, dataclass)
     result3, acc3 = BiLSTM.BiLstm(state, dataclass)
+    result4, acc4 = Transfomer.trans(state, dataclass)
     print(result1, acc1, result2, acc2, result3, acc3)
     return render(request, 'analysis.html',
-                  {'result1': result1, 'result2': result2, 'result3': result3,
-                   'acc1': acc1, 'acc2': acc2, 'acc3': acc3})
+                  {'result1': result1, 'result2': result2, 'result3': result3, 'result4': result4,
+                   'acc1': acc1, 'acc2': acc2, 'acc3': acc3, 'acc4':acc4})

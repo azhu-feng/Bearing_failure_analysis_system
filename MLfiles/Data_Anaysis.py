@@ -58,4 +58,6 @@ def load_data(file_path):
 
     y_train_one_hot, y_val_one_hot, y_test_one_hot = one_hot(y_train, y_val, y_test)
     x_train, x_val, x_test = X_train[:, :, np.newaxis], X_val[:, :, np.newaxis], X_test[:, :, np.newaxis]
+
+    # print(x_train.shape, y_train_one_hot.shape, x_val.shape, y_val_one_hot.shape, x_test.shape, y_test_one_hot.shape)
     return x_train, x_val, x_test, y_train_one_hot, y_val_one_hot, y_test_one_hot, num_classes, fault_types
